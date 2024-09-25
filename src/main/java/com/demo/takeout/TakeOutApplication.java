@@ -10,5 +10,4 @@ public class TakeOutApplication {
     public static void main(String[] args) {
         SpringApplication.run(TakeOutApplication.class, args);
     }
-
 }
