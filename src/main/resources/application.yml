@@ -1,0 +1,27 @@
+zidingyi:
+  bianliang:
+    a: 60000
+    b: token-secretKey
+logging:
+  level:
+    com:
+      demo:
+        takeout:
+          mapper: debug
+mybatis-plus:
+  type-aliases-package: com.demo.takeout.pojo.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/sky_take_out?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 12345678
+#      Druid 默认每 60s 运行一次空闲连接回收器，所以超过 60s 没有使用的连接会被释放
+      time-between-eviction-runs-millis: 1800000 # 设置为30分钟，fix出现discard long time none错误日志
